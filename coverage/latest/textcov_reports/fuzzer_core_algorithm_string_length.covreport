@@ -1,19 +1,19 @@
 LLVMFuzzerTestOneInput:
-    5|     11|{
-    6|     11|    if (size > 0 && data[size - 1] != '\0')
+    5|      1|{
+    6|      1|    if (size > 0 && data[size - 1] != '\0')
   ------------------
-  |  Branch (6:9): [True: 11, False: 0]
-  |  Branch (6:21): [True: 1, False: 10]
+  |  Branch (6:9): [True: 1, False: 0]
+  |  Branch (6:21): [True: 1, False: 0]
   ------------------
     7|      1|    {
     8|      1|        return 0;
     9|      1|    }
    10|       |
-   11|     10|    const char* string = reinterpret_cast<const char*>(data);
+   11|      0|    const char* string = reinterpret_cast<const char*>(data);
    12|       |
-   13|     10|    phi::usize result = phi::string_length(string);
-   14|     10|    (void)result;
+   13|      0|    phi::usize result = phi::string_length(string);
+   14|      0|    (void)result;
    15|       |
-   16|     10|    return 0;
-   17|     11|}
+   16|      0|    return 0;
+   17|      1|}
 
