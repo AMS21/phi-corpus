@@ -1,6 +1,6 @@
 _ZN3phi20string_length_unsafeIKcEENS_7integerImEEPT_:
-   37|     10|{
-   38|     10|    PHI_ASSERT(string != nullptr, "Passing nullptr to string_length_unsafe is not allowed. Use "
+   34|     10|{
+   35|     10|    PHI_ASSERT(string != nullptr, "Passing nullptr to string_length_unsafe is not allowed. Use "
   ------------------
   |  |   53|     10|#    define PHI_ASSERT(condition, ...) PHI_RELEASE_ASSERT(condition, __VA_ARGS__)
   |  |  ------------------
@@ -33,19 +33,19 @@ _ZN3phi20string_length_unsafeIKcEENS_7integerImEEPT_:
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-   39|     10|                                  "string_length if you intended to pass a nullptr.");
-   40|       |
-   41|     10|    usize count = 0u;
-   42|    213|    for (; *string != CharT('\0'); ++string)
+   36|     10|                                  "string_length if you intended to pass a nullptr.");
+   37|       |
+   38|     10|    usize count = 0u;
+   39|    213|    for (; *string != CharT('\0'); ++string)
   ------------------
-  |  Branch (42:12): [True: 203, False: 10]
+  |  Branch (39:12): [True: 203, False: 10]
   ------------------
-   43|    203|    {
-   44|    203|        ++count;
-   45|    203|    }
-   46|       |
-   47|     10|    return count;
-   48|     10|}
+   40|    203|    {
+   41|    203|        ++count;
+   42|    203|    }
+   43|       |
+   44|     10|    return count;
+   45|     10|}
 
 _ZN3phi7integerImEppEv:
   311|    203|    {
@@ -94,27 +94,27 @@ _ZN3phi6detail19will_addition_errorImEEbNS0_20unsigned_integer_tagET_S3_:
   142|    203|    }
 
 LLVMFuzzerTestOneInput:
-   10|     11|{
-   11|     11|    if (size == 0)
+    5|     11|{
+    6|     11|    if (size == 0)
   ------------------
-  |  Branch (11:9): [True: 0, False: 11]
+  |  Branch (6:9): [True: 0, False: 11]
   ------------------
-   12|      0|    {
-   13|      0|        return 0;
-   14|      0|    }
-   15|     11|    if (data[size - 1] != '\0')
+    7|      0|    {
+    8|      0|        return 0;
+    9|      0|    }
+   10|     11|    if (data[size - 1] != '\0')
   ------------------
-  |  Branch (15:9): [True: 1, False: 10]
+  |  Branch (10:9): [True: 1, False: 10]
   ------------------
-   16|      1|    {
-   17|      1|        return 0;
-   18|      1|    }
+   11|      1|    {
+   12|      1|        return 0;
+   13|      1|    }
+   14|       |
+   15|     10|    const char* string = reinterpret_cast<const char*>(data);
+   16|       |
+   17|     10|    phi::usize result = phi::string_length_unsafe(string);
+   18|     10|    (void)result;
    19|       |
-   20|     10|    const char* string = reinterpret_cast<const char*>(data);
-   21|       |
-   22|     10|    phi::usize result = phi::string_length_unsafe(string);
-   23|     10|    (void)result;
-   24|       |
-   25|     10|    return 0;
-   26|     11|}
+   20|     10|    return 0;
+   21|     11|}
 
