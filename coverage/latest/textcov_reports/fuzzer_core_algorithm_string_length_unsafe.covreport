@@ -1,6 +1,6 @@
 _ZN3phi20string_length_unsafeIKcEENS_7integerImEEPT_:
-   34|     10|{
-   35|     10|    PHI_ASSERT(string != nullptr, "Passing nullptr to string_length_unsafe is not allowed. Use "
+   32|     10|{
+   33|     10|    PHI_ASSERT(string != nullptr, "Passing nullptr to string_length_unsafe is not allowed. Use "
   ------------------
   |  |   53|     10|#    define PHI_ASSERT(condition, ...) PHI_RELEASE_ASSERT(condition, __VA_ARGS__)
   |  |  ------------------
@@ -33,23 +33,23 @@ _ZN3phi20string_length_unsafeIKcEENS_7integerImEEPT_:
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-   36|     10|                                  "string_length if you intended to pass a nullptr.");
-   37|       |
-   38|     10|    usize count = 0u;
-   39|    213|    for (; *string != CharT('\0'); ++string)
+   34|     10|                                  "string_length if you intended to pass a nullptr.");
+   35|       |
+   36|     10|    usize count = 0u;
+   37|    213|    for (; *string != CharT('\0'); ++string)
   ------------------
-  |  Branch (39:12): [True: 203, False: 10]
+  |  Branch (37:12): [True: 203, False: 10]
   ------------------
-   40|    203|    {
-   41|    203|        ++count;
-   42|    203|    }
-   43|       |
-   44|     10|    return count;
-   45|     10|}
+   38|    203|    {
+   39|    203|        ++count;
+   40|    203|    }
+   41|       |
+   42|     10|    return count;
+   43|     10|}
 
 _ZN3phi7integerImEppEv:
-  311|    203|    {
-  312|    203|        PHI_ASSERT(!detail::will_addition_error(detail::arithmetic_tag_for<IntegerT>{}, m_Value,
+  310|    203|    {
+  311|    203|        PHI_ASSERT(!detail::will_addition_error(detail::arithmetic_tag_for<IntegerT>{}, m_Value,
   ------------------
   |  |   53|    203|#    define PHI_ASSERT(condition, ...) PHI_RELEASE_ASSERT(condition, __VA_ARGS__)
   |  |  ------------------
@@ -82,12 +82,12 @@ _ZN3phi7integerImEppEv:
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-  313|    203|                                                IntegerT(1)),
-  314|    203|                   "Operator++ will result in overflow. Args {}", m_Value);
-  315|       |
-  316|    203|        m_Value += 1;
-  317|    203|        return *this;
-  318|    203|    }
+  312|    203|                                                IntegerT(1)),
+  313|    203|                   "Operator++ will result in overflow. Args {}", m_Value);
+  314|       |
+  315|    203|        m_Value += 1;
+  316|    203|        return *this;
+  317|    203|    }
 _ZN3phi6detail19will_addition_errorImEEbNS0_20unsigned_integer_tagET_S3_:
   140|    203|    {
   141|    203|        return std::numeric_limits<TypeT>::max() - rhs < lhs;
