@@ -1,98 +1,98 @@
 _ZN3phi13string_lengthIKcEENS_7integerImEEPT_:
-   24|     19|{
-   25|     19|    if (string == nullptr)
+   24|     10|{
+   25|     10|    if (string == nullptr)
   ------------------
-  |  Branch (25:9): [True: 0, False: 19]
+  |  Branch (25:9): [True: 0, False: 10]
   ------------------
    26|      0|    {
    27|      0|        return 0u;
    28|      0|    }
    29|       |
-   30|     19|    usize count = 0u;
-   31|    425|    for (; *string != CharT('\0'); ++string)
+   30|     10|    usize count = 0u;
+   31|    213|    for (; *string != CharT('\0'); ++string)
   ------------------
-  |  Branch (31:12): [True: 406, False: 19]
+  |  Branch (31:12): [True: 203, False: 10]
   ------------------
-   32|    406|    {
-   33|    406|        ++count;
-   34|    406|    }
+   32|    203|    {
+   33|    203|        ++count;
+   34|    203|    }
    35|       |
-   36|     19|    return count;
-   37|     19|}
+   36|     10|    return count;
+   37|     10|}
 
 _ZN3phi7integerImEppEv:
-  310|    406|    {
-  311|    406|        PHI_ASSERT(!detail::will_addition_error(detail::arithmetic_tag_for<IntegerT>{}, m_Value,
+  310|    203|    {
+  311|    203|        PHI_ASSERT(!detail::will_addition_error(detail::arithmetic_tag_for<IntegerT>{}, m_Value,
   ------------------
-  |  |   58|    406|#    define PHI_ASSERT(condition, ...) PHI_RELEASE_ASSERT(condition, __VA_ARGS__)
+  |  |   58|    203|#    define PHI_ASSERT(condition, ...) PHI_RELEASE_ASSERT(condition, __VA_ARGS__)
   |  |  ------------------
-  |  |  |  |   42|    406|    PHI_BEGIN_MACRO()                                                                              \
+  |  |  |  |   42|    203|    PHI_BEGIN_MACRO()                                                                              \
   |  |  |  |  ------------------
-  |  |  |  |  |  |   17|    406|#define PHI_BEGIN_MACRO() do {
+  |  |  |  |  |  |   17|    203|#define PHI_BEGIN_MACRO() do {
   |  |  |  |  ------------------
-  |  |  |  |   43|    406|    PHI_CLANG_SUPPRESS_WARNING_WITH_PUSH("-Wtautological-pointer-compare")                         \
-  |  |  |  |   44|    406|    PHI_GCC_SUPPRESS_WARNING_WITH_PUSH("-Wuseless-cast")                                           \
-  |  |  |  |   45|    406|    PHI_GCC_SUPPRESS_WARNING("-Wnonnull-compare")                                                  \
-  |  |  |  |   46|    406|    PHI_MSVC_SUPPRESS_WARNING_WITH_PUSH(4702) /* unreachable code */                               \
-  |  |  |  |   47|    406|    if (PHI_UNLIKELY(!static_cast<bool>(condition)))                                               \
+  |  |  |  |   43|    203|    PHI_CLANG_SUPPRESS_WARNING_WITH_PUSH("-Wtautological-pointer-compare")                         \
+  |  |  |  |   44|    203|    PHI_GCC_SUPPRESS_WARNING_WITH_PUSH("-Wuseless-cast")                                           \
+  |  |  |  |   45|    203|    PHI_GCC_SUPPRESS_WARNING("-Wnonnull-compare")                                                  \
+  |  |  |  |   46|    203|    PHI_MSVC_SUPPRESS_WARNING_WITH_PUSH(4702) /* unreachable code */                               \
+  |  |  |  |   47|    203|    if (PHI_UNLIKELY(!static_cast<bool>(condition)))                                               \
   |  |  |  |  ------------------
-  |  |  |  |  |  |   15|    406|#    define PHI_UNLIKELY(condition) __builtin_expect(!!(condition), 0)
+  |  |  |  |  |  |   15|    203|#    define PHI_UNLIKELY(condition) __builtin_expect(!!(condition), 0)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  Branch (15:37): [True: 0, False: 406]
+  |  |  |  |  |  |  |  Branch (15:37): [True: 0, False: 203]
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
-  |  |  |  |   48|    406|    {                                                                                              \
+  |  |  |  |   48|    203|    {                                                                                              \
   |  |  |  |   49|      0|        ::phi::detail::phi_assert_failure_handler(#condition, __FILE__, __LINE__,                  \
   |  |  |  |   50|      0|                                                  PHI_CURRENT_FUNCTION());                         \
   |  |  |  |  ------------------
   |  |  |  |  |  |   24|      0|#    define PHI_CURRENT_FUNCTION() __PRETTY_FUNCTION__
   |  |  |  |  ------------------
   |  |  |  |   51|      0|    }                                                                                              \
-  |  |  |  |   52|    406|    PHI_MSVC_SUPPRESS_WARNING_POP()                                                                \
-  |  |  |  |   53|    406|    PHI_CLANG_SUPPRESS_WARNING_POP()                                                               \
-  |  |  |  |   54|    406|    PHI_GCC_SUPPRESS_WARNING_POP()                                                                 \
-  |  |  |  |   55|    406|    PHI_END_MACRO()
+  |  |  |  |   52|    203|    PHI_MSVC_SUPPRESS_WARNING_POP()                                                                \
+  |  |  |  |   53|    203|    PHI_CLANG_SUPPRESS_WARNING_POP()                                                               \
+  |  |  |  |   54|    203|    PHI_GCC_SUPPRESS_WARNING_POP()                                                                 \
+  |  |  |  |   55|    203|    PHI_END_MACRO()
   |  |  |  |  ------------------
-  |  |  |  |  |  |   25|    406|#define PHI_END_MACRO() } while ((void) 0, 0) /* avoid warnings */
+  |  |  |  |  |  |   25|    203|#define PHI_END_MACRO() } while ((void) 0, 0) /* avoid warnings */
   |  |  |  |  |  |  ------------------
   |  |  |  |  |  |  |  Branch (25:34): [Folded - Ignored]
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-  312|    406|                                                IntegerT(1)),
-  313|    406|                   "Operator++ will result in overflow. Args {}", m_Value);
+  312|    203|                                                IntegerT(1)),
+  313|    203|                   "Operator++ will result in overflow. Args {}", m_Value);
   314|       |
-  315|    406|        m_Value += 1;
-  316|    406|        return *this;
-  317|    406|    }
+  315|    203|        m_Value += 1;
+  316|    203|        return *this;
+  317|    203|    }
 _ZN3phi6detail19will_addition_errorImEEbNS0_20unsigned_integer_tagET_S3_:
-  140|    406|    {
-  141|    406|        return std::numeric_limits<TypeT>::max() - rhs < lhs;
-  142|    406|    }
+  140|    203|    {
+  141|    203|        return std::numeric_limits<TypeT>::max() - rhs < lhs;
+  142|    203|    }
 
 LLVMFuzzerTestOneInput:
-    5|     21|{
-    6|     21|    if (size == 0u)
+    5|     11|{
+    6|     11|    if (size == 0u)
   ------------------
-  |  Branch (6:9): [True: 0, False: 21]
+  |  Branch (6:9): [True: 0, False: 11]
   ------------------
     7|      0|    {
     8|      0|        return 0;
     9|      0|    }
-   10|     21|    if (data[size - 1] != '\0')
+   10|     11|    if (data[size - 1] != '\0')
   ------------------
-  |  Branch (10:9): [True: 2, False: 19]
+  |  Branch (10:9): [True: 1, False: 10]
   ------------------
-   11|      2|    {
-   12|      2|        return 0;
-   13|      2|    }
+   11|      1|    {
+   12|      1|        return 0;
+   13|      1|    }
    14|       |
-   15|     19|    const char* string = reinterpret_cast<const char*>(data);
+   15|     10|    const char* string = reinterpret_cast<const char*>(data);
    16|       |
-   17|     19|    phi::usize result = phi::string_length(string);
-   18|     19|    (void)result;
+   17|     10|    phi::usize result = phi::string_length(string);
+   18|     10|    (void)result;
    19|       |
-   20|     19|    return 0;
-   21|     21|}
+   20|     10|    return 0;
+   21|     11|}
 
