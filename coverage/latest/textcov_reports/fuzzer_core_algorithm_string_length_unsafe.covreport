@@ -14,16 +14,16 @@ _ZN3phi20string_length_unsafeIKcEENS_7integerImEEPT_:
   |  |  |  |   46|     10|    PHI_MSVC_SUPPRESS_WARNING_WITH_PUSH(4702) /* unreachable code */                               \
   |  |  |  |   47|     10|    if (PHI_UNLIKELY(!static_cast<bool>(condition)))                                               \
   |  |  |  |  ------------------
-  |  |  |  |  |  |   15|     10|#    define PHI_UNLIKELY(condition) __builtin_expect(!!(condition), 0)
+  |  |  |  |  |  |   16|     10|#    define PHI_UNLIKELY(condition) __builtin_expect(!!(condition), 0)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  Branch (15:37): [True: 0, False: 10]
+  |  |  |  |  |  |  |  Branch (16:37): [True: 0, False: 10]
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  |  |   48|     10|    {                                                                                              \
   |  |  |  |   49|      0|        ::phi::detail::phi_assert_failure_handler(#condition, __FILE__, __LINE__,                  \
   |  |  |  |   50|      0|                                                  PHI_CURRENT_FUNCTION());                         \
   |  |  |  |  ------------------
-  |  |  |  |  |  |   24|      0|#    define PHI_CURRENT_FUNCTION() __PRETTY_FUNCTION__
+  |  |  |  |  |  |   27|      0|#    define PHI_CURRENT_FUNCTION() __PRETTY_FUNCTION__
   |  |  |  |  ------------------
   |  |  |  |   51|      0|    }                                                                                              \
   |  |  |  |   52|     10|    PHI_MSVC_SUPPRESS_WARNING_POP()                                                                \
@@ -53,8 +53,8 @@ _ZN3phi20string_length_unsafeIKcEENS_7integerImEEPT_:
    36|     10|}
 
 _ZN3phi7integerImEppEv:
-  310|    203|    {
-  311|    203|        PHI_ASSERT(!detail::will_addition_error(detail::arithmetic_tag_for<IntegerT>{}, m_Value,
+  308|    203|    {
+  309|    203|        PHI_ASSERT(!detail::will_addition_error(detail::arithmetic_tag_for<IntegerT>{}, m_Value,
   ------------------
   |  |   58|    203|#    define PHI_ASSERT(condition, ...) PHI_RELEASE_ASSERT(condition, __VA_ARGS__)
   |  |  ------------------
@@ -68,16 +68,16 @@ _ZN3phi7integerImEppEv:
   |  |  |  |   46|    203|    PHI_MSVC_SUPPRESS_WARNING_WITH_PUSH(4702) /* unreachable code */                               \
   |  |  |  |   47|    203|    if (PHI_UNLIKELY(!static_cast<bool>(condition)))                                               \
   |  |  |  |  ------------------
-  |  |  |  |  |  |   15|    203|#    define PHI_UNLIKELY(condition) __builtin_expect(!!(condition), 0)
+  |  |  |  |  |  |   16|    203|#    define PHI_UNLIKELY(condition) __builtin_expect(!!(condition), 0)
   |  |  |  |  |  |  ------------------
-  |  |  |  |  |  |  |  Branch (15:37): [True: 0, False: 203]
+  |  |  |  |  |  |  |  Branch (16:37): [True: 0, False: 203]
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
   |  |  |  |   48|    203|    {                                                                                              \
   |  |  |  |   49|      0|        ::phi::detail::phi_assert_failure_handler(#condition, __FILE__, __LINE__,                  \
   |  |  |  |   50|      0|                                                  PHI_CURRENT_FUNCTION());                         \
   |  |  |  |  ------------------
-  |  |  |  |  |  |   24|      0|#    define PHI_CURRENT_FUNCTION() __PRETTY_FUNCTION__
+  |  |  |  |  |  |   27|      0|#    define PHI_CURRENT_FUNCTION() __PRETTY_FUNCTION__
   |  |  |  |  ------------------
   |  |  |  |   51|      0|    }                                                                                              \
   |  |  |  |   52|    203|    PHI_MSVC_SUPPRESS_WARNING_POP()                                                                \
@@ -92,16 +92,16 @@ _ZN3phi7integerImEppEv:
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-  312|    203|                                                IntegerT(1)),
-  313|    203|                   "Operator++ will result in overflow. Args {}", m_Value);
-  314|       |
-  315|    203|        m_Value += 1;
-  316|    203|        return *this;
-  317|    203|    }
+  310|    203|                                                IntegerT(1)),
+  311|    203|                   "Operator++ will result in overflow. Args {}", m_Value);
+  312|       |
+  313|    203|        m_Value += 1;
+  314|    203|        return *this;
+  315|    203|    }
 _ZN3phi6detail19will_addition_errorImEEbNS0_20unsigned_integer_tagET_S3_:
-  140|    203|    {
-  141|    203|        return std::numeric_limits<TypeT>::max() - rhs < lhs;
-  142|    203|    }
+  138|    203|    {
+  139|    203|        return std::numeric_limits<TypeT>::max() - rhs < lhs;
+  140|    203|    }
 
 LLVMFuzzerTestOneInput:
     5|     11|{
