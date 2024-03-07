@@ -1,2 +1,2 @@
-fuzzer_core_algorithm_string_length
 fuzzer_core_algorithm_string_length_unsafe
+fuzzer_core_algorithm_string_length
