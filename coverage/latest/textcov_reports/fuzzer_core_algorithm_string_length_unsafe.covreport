@@ -1,35 +1,35 @@
 _ZN3phi20string_length_unsafeIKcEENS_7integerImEEPT_:
-   25|     10|{
-   26|     10|    PHI_ASSERT(string != nullptr, "Passing nullptr to string_length_unsafe is not allowed. Use "
+   26|     10|{
+   27|     10|    PHI_ASSERT(string != nullptr, "Passing nullptr to string_length_unsafe is not allowed. Use "
   ------------------
-  |  |   58|     10|#    define PHI_ASSERT(condition, ...) PHI_RELEASE_ASSERT(condition, __VA_ARGS__)
+  |  |   59|     10|#    define PHI_ASSERT(condition, ...) PHI_RELEASE_ASSERT(condition, __VA_ARGS__)
   |  |  ------------------
-  |  |  |  |   42|     10|    PHI_BEGIN_MACRO()                                                                              \
+  |  |  |  |   43|     10|    PHI_BEGIN_MACRO()                                                                              \
   |  |  |  |  ------------------
   |  |  |  |  |  |   17|     10|#define PHI_BEGIN_MACRO() do {
   |  |  |  |  ------------------
-  |  |  |  |   43|     10|    PHI_CLANG_SUPPRESS_WARNING_WITH_PUSH("-Wtautological-pointer-compare")                         \
-  |  |  |  |   44|     10|    PHI_GCC_SUPPRESS_WARNING_WITH_PUSH("-Wuseless-cast")                                           \
-  |  |  |  |   45|     10|    PHI_GCC_SUPPRESS_WARNING("-Wnonnull-compare")                                                  \
-  |  |  |  |   46|     10|    PHI_MSVC_SUPPRESS_WARNING_WITH_PUSH(4702) /* unreachable code */                               \
-  |  |  |  |   47|     10|    if (PHI_UNLIKELY(!static_cast<bool>(condition)))                                               \
+  |  |  |  |   44|     10|    PHI_CLANG_SUPPRESS_WARNING_WITH_PUSH("-Wtautological-pointer-compare")                         \
+  |  |  |  |   45|     10|    PHI_GCC_SUPPRESS_WARNING_WITH_PUSH("-Wuseless-cast")                                           \
+  |  |  |  |   46|     10|    PHI_GCC_SUPPRESS_WARNING("-Wnonnull-compare")                                                  \
+  |  |  |  |   47|     10|    PHI_MSVC_SUPPRESS_WARNING_WITH_PUSH(4702) /* unreachable code */                               \
+  |  |  |  |   48|     10|    if (PHI_UNLIKELY(!static_cast<bool>(condition)))                                               \
   |  |  |  |  ------------------
   |  |  |  |  |  |   16|     10|#    define PHI_UNLIKELY(condition) __builtin_expect(!!(condition), 0)
   |  |  |  |  |  |  ------------------
   |  |  |  |  |  |  |  Branch (16:37): [True: 0, False: 10]
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
-  |  |  |  |   48|     10|    {                                                                                              \
-  |  |  |  |   49|      0|        ::phi::detail::phi_assert_failure_handler(#condition, __FILE__, __LINE__,                  \
-  |  |  |  |   50|      0|                                                  PHI_CURRENT_FUNCTION());                         \
+  |  |  |  |   49|     10|    {                                                                                              \
+  |  |  |  |   50|      0|        ::phi::detail::phi_assert_failure_handler(#condition, __FILE__, __LINE__,                  \
+  |  |  |  |   51|      0|                                                  PHI_CURRENT_FUNCTION());                         \
   |  |  |  |  ------------------
   |  |  |  |  |  |   27|      0|#    define PHI_CURRENT_FUNCTION() __PRETTY_FUNCTION__
   |  |  |  |  ------------------
-  |  |  |  |   51|      0|    }                                                                                              \
-  |  |  |  |   52|     10|    PHI_MSVC_SUPPRESS_WARNING_POP()                                                                \
-  |  |  |  |   53|     10|    PHI_CLANG_SUPPRESS_WARNING_POP()                                                               \
-  |  |  |  |   54|     10|    PHI_GCC_SUPPRESS_WARNING_POP()                                                                 \
-  |  |  |  |   55|     10|    PHI_END_MACRO()
+  |  |  |  |   52|      0|    }                                                                                              \
+  |  |  |  |   53|     10|    PHI_MSVC_SUPPRESS_WARNING_POP()                                                                \
+  |  |  |  |   54|     10|    PHI_CLANG_SUPPRESS_WARNING_POP()                                                               \
+  |  |  |  |   55|     10|    PHI_GCC_SUPPRESS_WARNING_POP()                                                                 \
+  |  |  |  |   56|     10|    PHI_END_MACRO()
   |  |  |  |  ------------------
   |  |  |  |  |  |   25|     10|#define PHI_END_MACRO() } while ((void) 0, 0) /* avoid warnings */
   |  |  |  |  |  |  ------------------
@@ -38,52 +38,52 @@ _ZN3phi20string_length_unsafeIKcEENS_7integerImEEPT_:
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-   27|     10|                                  "string_length if you intended to pass a nullptr.");
-   28|       |
-   29|     10|    usize count = 0u;
-   30|    213|    for (; *string != CharT('\0'); ++string)
+   28|     10|                                  "string_length if you intended to pass a nullptr.");
+   29|       |
+   30|     10|    usize count = 0u;
+   31|    213|    for (; *string != CharT('\0'); ++string)
   ------------------
-  |  Branch (30:12): [True: 203, False: 10]
+  |  Branch (31:12): [True: 203, False: 10]
   ------------------
-   31|    203|    {
-   32|    203|        ++count;
-   33|    203|    }
-   34|       |
-   35|     10|    return count;
-   36|     10|}
+   32|    203|    {
+   33|    203|        ++count;
+   34|    203|    }
+   35|       |
+   36|     10|    return count;
+   37|     10|}
 
 _ZN3phi7integerImEppEv:
   308|    203|    {
   309|    203|        PHI_ASSERT(!detail::will_addition_error(detail::arithmetic_tag_for<IntegerT>{}, m_Value,
   ------------------
-  |  |   58|    203|#    define PHI_ASSERT(condition, ...) PHI_RELEASE_ASSERT(condition, __VA_ARGS__)
+  |  |   59|    203|#    define PHI_ASSERT(condition, ...) PHI_RELEASE_ASSERT(condition, __VA_ARGS__)
   |  |  ------------------
-  |  |  |  |   42|    203|    PHI_BEGIN_MACRO()                                                                              \
+  |  |  |  |   43|    203|    PHI_BEGIN_MACRO()                                                                              \
   |  |  |  |  ------------------
   |  |  |  |  |  |   17|    203|#define PHI_BEGIN_MACRO() do {
   |  |  |  |  ------------------
-  |  |  |  |   43|    203|    PHI_CLANG_SUPPRESS_WARNING_WITH_PUSH("-Wtautological-pointer-compare")                         \
-  |  |  |  |   44|    203|    PHI_GCC_SUPPRESS_WARNING_WITH_PUSH("-Wuseless-cast")                                           \
-  |  |  |  |   45|    203|    PHI_GCC_SUPPRESS_WARNING("-Wnonnull-compare")                                                  \
-  |  |  |  |   46|    203|    PHI_MSVC_SUPPRESS_WARNING_WITH_PUSH(4702) /* unreachable code */                               \
-  |  |  |  |   47|    203|    if (PHI_UNLIKELY(!static_cast<bool>(condition)))                                               \
+  |  |  |  |   44|    203|    PHI_CLANG_SUPPRESS_WARNING_WITH_PUSH("-Wtautological-pointer-compare")                         \
+  |  |  |  |   45|    203|    PHI_GCC_SUPPRESS_WARNING_WITH_PUSH("-Wuseless-cast")                                           \
+  |  |  |  |   46|    203|    PHI_GCC_SUPPRESS_WARNING("-Wnonnull-compare")                                                  \
+  |  |  |  |   47|    203|    PHI_MSVC_SUPPRESS_WARNING_WITH_PUSH(4702) /* unreachable code */                               \
+  |  |  |  |   48|    203|    if (PHI_UNLIKELY(!static_cast<bool>(condition)))                                               \
   |  |  |  |  ------------------
   |  |  |  |  |  |   16|    203|#    define PHI_UNLIKELY(condition) __builtin_expect(!!(condition), 0)
   |  |  |  |  |  |  ------------------
   |  |  |  |  |  |  |  Branch (16:37): [True: 0, False: 203]
   |  |  |  |  |  |  ------------------
   |  |  |  |  ------------------
-  |  |  |  |   48|    203|    {                                                                                              \
-  |  |  |  |   49|      0|        ::phi::detail::phi_assert_failure_handler(#condition, __FILE__, __LINE__,                  \
-  |  |  |  |   50|      0|                                                  PHI_CURRENT_FUNCTION());                         \
+  |  |  |  |   49|    203|    {                                                                                              \
+  |  |  |  |   50|      0|        ::phi::detail::phi_assert_failure_handler(#condition, __FILE__, __LINE__,                  \
+  |  |  |  |   51|      0|                                                  PHI_CURRENT_FUNCTION());                         \
   |  |  |  |  ------------------
   |  |  |  |  |  |   27|      0|#    define PHI_CURRENT_FUNCTION() __PRETTY_FUNCTION__
   |  |  |  |  ------------------
-  |  |  |  |   51|      0|    }                                                                                              \
-  |  |  |  |   52|    203|    PHI_MSVC_SUPPRESS_WARNING_POP()                                                                \
-  |  |  |  |   53|    203|    PHI_CLANG_SUPPRESS_WARNING_POP()                                                               \
-  |  |  |  |   54|    203|    PHI_GCC_SUPPRESS_WARNING_POP()                                                                 \
-  |  |  |  |   55|    203|    PHI_END_MACRO()
+  |  |  |  |   52|      0|    }                                                                                              \
+  |  |  |  |   53|    203|    PHI_MSVC_SUPPRESS_WARNING_POP()                                                                \
+  |  |  |  |   54|    203|    PHI_CLANG_SUPPRESS_WARNING_POP()                                                               \
+  |  |  |  |   55|    203|    PHI_GCC_SUPPRESS_WARNING_POP()                                                                 \
+  |  |  |  |   56|    203|    PHI_END_MACRO()
   |  |  |  |  ------------------
   |  |  |  |  |  |   25|    203|#define PHI_END_MACRO() } while ((void) 0, 0) /* avoid warnings */
   |  |  |  |  |  |  ------------------
