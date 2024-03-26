@@ -53,8 +53,8 @@ _ZN3phi20string_length_unsafeIKcEENS_7integerImEEPT_:
    37|     10|}
 
 _ZN3phi7integerImEppEv:
-  311|    203|    {
-  312|    203|        PHI_ASSERT(!detail::will_addition_error(detail::arithmetic_tag_for<IntegerT>{}, m_Value,
+  313|    203|    {
+  314|    203|        PHI_ASSERT(!detail::will_addition_error(detail::arithmetic_tag_for<IntegerT>{}, m_Value,
   ------------------
   |  |   59|    203|#    define PHI_ASSERT(condition, ...) PHI_RELEASE_ASSERT(condition, __VA_ARGS__)
   |  |  ------------------
@@ -92,16 +92,16 @@ _ZN3phi7integerImEppEv:
   |  |  |  |  ------------------
   |  |  ------------------
   ------------------
-  313|    203|                                                IntegerT(1)),
-  314|    203|                   "Operator++ will result in overflow. Args {}", m_Value);
-  315|       |
-  316|    203|        m_Value += 1;
-  317|    203|        return *this;
-  318|    203|    }
+  315|    203|                                                IntegerT(1)),
+  316|    203|                   "Operator++ will result in overflow. Args {}", m_Value);
+  317|       |
+  318|    203|        m_Value += 1;
+  319|    203|        return *this;
+  320|    203|    }
 _ZN3phi6detail19will_addition_errorImEEbNS0_20unsigned_integer_tagET_S3_:
-  139|    203|    {
-  140|    203|        return std::numeric_limits<TypeT>::max() - rhs < lhs;
-  141|    203|    }
+  141|    203|    {
+  142|    203|        return std::numeric_limits<TypeT>::max() - rhs < lhs;
+  143|    203|    }
 
 LLVMFuzzerTestOneInput:
     5|     11|{
